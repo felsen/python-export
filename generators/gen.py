@@ -32,5 +32,19 @@ class Compute:
             rv.append(i)
         return rv
 
+    def __iter__(self, ):
+        self.last = 0
+        return self
+
+    def __next__(self, ):
+        rv = self.last
+        self.last += 1
+        if self.last > 10:
+            raise StopIteration()
+        sleep(.5)
+        return rv
+
 
 com = Compute()
+for val in com:
+    print(val)
