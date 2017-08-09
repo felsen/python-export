@@ -48,3 +48,10 @@ class Compute:
 com = Compute()
 for val in com:
     print(val)
+
+
+def compute_gen():
+    for i in range(10):
+        sleep(.5)
+        yield i
+
